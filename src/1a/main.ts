@@ -1,45 +1,45 @@
 
-const logoFolder = 'https://seujorgenochurras.github.io/etec-tablegame-feedback/src/1a/resources/logo';
-
-
-
 const tablegamesDiv = document.getElementById("tablegames")!
 
+const files = ["1Ba_Enzo.png"
+    , "1Ba_Felipe.png"
+    , "ArquipelagoAnwaki.png"
+    , "AstrEspcial.png"
+    , "Aventura_no_Reino_dos_Numeros.png"
+    , "Bloqueios.png"
+    , "Calcule_ou_Drible.png"
+    , "ColdWar.png"
+    , "Damistyca.png"
+    , "DataWar.png"
+    , "Eureka.png"
+    , "Exploradores_da_Estatistica.png"
+    , "Gunhild.png"
+    , "LM.png"
+    , "LudoCraft.png"
+    , "LudoMatematico.png"
+    , "Matemagico.png"
+    , "MateMaster.png"
+    , "OXdaQuestao.png"
+    , "SSQ.png"
+    , "StaticRPG.png"]
 
 
-fetch(logoFolder) // Assuming logoFolder is a valid URL
-    .then(response => response.text())
-    .then(data => {
-        const parser = new DOMParser();
-        const htmlDoc = parser.parseFromString(data, 'text/html');
-        const links = htmlDoc.querySelectorAll('a');
+for (let file of files) {
 
-        links.forEach(link => {
-            let file = link.getAttribute('href')!;
+    const logoDiv = document.createElement("div");
+    logoDiv.setAttribute("class", "tablegame-div");
 
-            if (file.endsWith('.jpg') || file.endsWith('.png')) {
-                file = file.replace("src/1a//", "");
+    const logoHypertext = document.createElement("a");
+    logoHypertext.setAttribute("href", `votar/index.html?tablegame=${file.replace("/src/1a/resources/logo/", "")
+        .replace(".png", "")}`)
 
-                const logoDiv = document.createElement("div");
-                logoDiv.setAttribute("class", "tablegame-div");
+    const logoImageElement = document.createElement("img");
+    logoImageElement.setAttribute("class", "tablegame-img");
+    logoImageElement.setAttribute("src", `resources/logo/${file}`);
 
-                const logoHypertext = document.createElement("a");
-                logoHypertext.setAttribute("href", `votar/index.html?tablegame=${file.replace("/src/1a/resources/logo/", "")
-                    .replace(".png", "")}`)
-                console.log(`votar/index.html?tablegame=${file.replace("/src/1a/resources/logo/", "")
-                    .replace(".png", "")}`)
+    logoHypertext.appendChild(logoImageElement);
+    logoDiv.appendChild(logoHypertext);
 
-                const logoImageElement = document.createElement("img");
-                logoImageElement.setAttribute("class", "tablegame-img");
-                logoImageElement.setAttribute("src", `${file}`);
+    tablegamesDiv.appendChild(logoDiv);
+}
 
-                logoHypertext.appendChild(logoImageElement);
-                logoDiv.appendChild(logoHypertext);
-
-                tablegamesDiv.appendChild(logoDiv);
-            }
-        });
-    })
-    .catch(error => {
-        console.error(error);
-    });
