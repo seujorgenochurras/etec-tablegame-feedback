@@ -15,6 +15,8 @@ fetch(logoFolder) // Assuming logoFolder is a valid URL
             var logoHypertext = document.createElement("a");
             logoHypertext.setAttribute("href", "votar/index.html?tablegame=".concat(file.replace("/src/1a/resources/logo/", "")
                 .replace(".png", "")));
+            console.log("votar/index.html?tablegame=".concat(file.replace("/src/1a/resources/logo/", "")
+                .replace(".png", "")));
             var logoImageElement = document.createElement("img");
             logoImageElement.setAttribute("class", "tablegame-img");
             logoImageElement.setAttribute("src", "".concat(file));
@@ -27,15 +29,3 @@ fetch(logoFolder) // Assuming logoFolder is a valid URL
     .catch(function (error) {
     console.error(error);
 });
-// fs.readdir(logoFolder, (_err, files) => {
-//     files.forEach(file => {
-//         const logoDiv = document.createElement("div");
-//         logoDiv.setAttribute("class", "tablegame-div");
-//         const logoImageElement = document.createElement("img")
-//         logoImageElement.setAttribute("class", "tablegame-div");
-//         logoImageElement.setAttribute("src", file)
-//         console.log(file);
-//         logoDiv.appendChild(logoImageElement);
-//         tablegamesDiv?.appendChild(logoDiv);
-//     })
-// })
