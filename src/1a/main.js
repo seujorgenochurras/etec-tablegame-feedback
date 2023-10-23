@@ -1,4 +1,4 @@
-var logoFolder = 'resources/logo/';
+var logoFolder = 'https://seujorgenochurras.github.io/etec-tablegame-feedback/src/1a/resources/logo';
 var tablegamesDiv = document.getElementById("tablegames");
 fetch(logoFolder) // Assuming logoFolder is a valid URL
     .then(function (response) { return response.text(); })
