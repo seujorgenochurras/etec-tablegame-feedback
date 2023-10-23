@@ -8,7 +8,10 @@ body {
     background-color: bisque;
     font-family: Arial, Helvetica, sans-serif;
 }
-
+.tablegame-img{
+    min-width: 400px;
+    min-height: 220px;
+}
 .feed-layout {
     background-color: white;
     width: 800px;
@@ -49,7 +52,7 @@ input {
     border-style: solid;
     border: 0px;
     position: inherit;
-    bottom: 0;
+    bottom: 7px;
     user-select: none;
-    margin-bottom: 20px;
+
 }
