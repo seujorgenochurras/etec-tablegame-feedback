@@ -124,6 +124,7 @@ function sendVoteRequest() {
             }
         });
     });
+    
 }
 function startEmojiAnimation(emoji) {
     var currentEmojiSrc = emoji.getAttribute("src");
