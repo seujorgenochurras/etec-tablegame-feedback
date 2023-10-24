@@ -1,5 +1,8 @@
 {
   "dependencies": {
     "node-fetch": "^3.3.2"
+  },
+  "devDependencies": {
+    "@types/wicg-file-system-access": "^2023.10.2"
   }
 }
