@@ -63,7 +63,8 @@ for (const radio of emojiRadios) {
 }
 
 async function sendVoteRequest() {
-    const url = "https://af29-2804-14d-8487-8cb6-24e8-9aaf-911b-d345.ngrok-free.app/"
+    const url = "https://af29-2804-14d-8487-8cb6-24e8-9aaf-911b-d345.ngrok-free.app/vote"
+
     const feedback = {
         tablegame: tablegameName,
         feedback: selectedFeedback,
