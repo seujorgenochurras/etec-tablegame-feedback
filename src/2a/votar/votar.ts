@@ -63,12 +63,10 @@ for (const radio of emojiRadios) {
 }
 
 async function sendVoteRequest() {
-    const url = "https://af29-2804-14d-8487-8cb6-24e8-9aaf-911b-d345.ngrok-free.app/vote"
-
+    const url = "http://127.0.0.1:8080/vote"
     const feedback = {
         tablegame: tablegameName,
         feedback: selectedFeedback,
-        voteClass: "ds1"
     }
     const response = await fetch(url, {
         method: 'POST',

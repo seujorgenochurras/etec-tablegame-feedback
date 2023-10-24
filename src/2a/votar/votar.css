@@ -9,15 +9,22 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+.tablegame-img {
+    min-width: 400px;
+    min-height: 220px;
+    max-height: 240px;
+    max-width: 600px;
+}
 
 .feed-layout {
     background-color: white;
-    width: 1200px;
-    height: 760px;
-
+    width: 800px;
+    height: 500px;
     top: 50%;
     left: 50%;
     position: absolute;
+    display: flex;
+    flex-direction: column;
     transform: translate(-50%, -50%);
     border-radius: 20px;
     border-width: 2px;
@@ -28,49 +35,28 @@ body {
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
 }
 
-.feed-text {
-    text-align: center;
-}
-
-.tablegames {
+.feed-level {
     display: flex;
     align-items: center;
     flex: auto;
-    flex-wrap: wrap;
-    flex-direction: row;
+    min-width: 100%;
 }
 
 
-.feed-page {
+input {
+    visibility: hidden;
+}
+
+.submit {
     background-color: #ccc;
     color: #fff;
     border-radius: 19px;
-    font-size: 50px;
-    padding: 10.5px 15.3px;
+    font-size: 30px;
+    padding: 19.5px 107.3px;
     border-style: solid;
     border: 0px;
-    text-decoration: none;
-    color: #000;
-    bottom: 220px;
-}
+    position: inherit;
+    bottom: 7px;
+    user-select: none;
 
-
-.feed-pages {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 50px;
-}
-
-.tablegame-img {
-    max-width: 200px;
-    max-height: 120px;
-}
-
-.tablegame-div {
-    padding: 5px;
-    background-color: rgb(255, 255, 255);
-    border-radius: 10px;
-    margin-top: 20px;
-    margin-left: 20px;
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.116);
 }
