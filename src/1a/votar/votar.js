@@ -96,10 +96,11 @@ function sendVoteRequest() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    url = "http://127.0.0.1:8080/vote";
+                    url = "https://af29-2804-14d-8487-8cb6-24e8-9aaf-911b-d345.ngrok-free.app/";
                     feedback = {
                         tablegame: tablegameName,
                         feedback: selectedFeedback,
+                        voteClass: "1DSA"
                     };
                     return [4 /*yield*/, fetch(url, {
                             method: 'POST',
