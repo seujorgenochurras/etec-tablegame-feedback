@@ -67,7 +67,7 @@ async function sendVoteRequest() {
     const feedback = {
         tablegame: tablegameName,
         feedback: selectedFeedback,
-        voteClass: "1DSA"
+        voteClass: "ds1"
     }
     const response = await fetch(url, {
         method: 'POST',

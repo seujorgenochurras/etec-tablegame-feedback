@@ -100,7 +100,7 @@ function sendVoteRequest() {
                     feedback = {
                         tablegame: tablegameName,
                         feedback: selectedFeedback,
-                        voteClass: "1DSA"
+                        voteClass: "ds1"
                     };
                     return [4 /*yield*/, fetch(url, {
                             method: 'POST',
