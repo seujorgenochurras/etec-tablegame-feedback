@@ -1,1 +1,2 @@
-rootProject.name = "etec-feedback-api"
+rootProject.name = "api-feedbakc"
+
