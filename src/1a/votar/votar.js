@@ -115,7 +115,7 @@ function sendVoteRequest() {
                             }
                             else {
                                 alert("Voto enviado com sucesso!");
-                                window.location.href = "/";
+                                window.location.href = "https://seujorgenochurras.github.io/etec-tablegame-feedback/src/1a/index.html";
                             }
                         })];
                 case 1:
@@ -124,7 +124,6 @@ function sendVoteRequest() {
             }
         });
     });
-    
 }
 function startEmojiAnimation(emoji) {
     var currentEmojiSrc = emoji.getAttribute("src");

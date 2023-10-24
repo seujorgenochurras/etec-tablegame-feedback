@@ -82,7 +82,7 @@ async function sendVoteRequest() {
         if (!response.ok) { alert("algo deu errado no request!") }
         else {
             alert("Voto enviado com sucesso!")
-            window.location.href = "/"
+            window.location.href = "https://seujorgenochurras.github.io/etec-tablegame-feedback/src/1a/index.html"
         }
     }
     );
