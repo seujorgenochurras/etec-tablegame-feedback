@@ -37,7 +37,58 @@ public class VoteController {
                 "    <meta charset=\"UTF-8\">\n" +
                 "    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n" +
                 "    <title>De seu feedback!</title>\n" +
-                "    <link rel=\"stylesheet\" href=\"index.css\">\n" +
+                "    <style> body {\n" +
+                "    margin: 0;\n" +
+                "    padding: 0;\n" +
+                "    border: 0;\n" +
+                "    font-size: 100%;\n" +
+                "    font: inherit;\n" +
+                "    vertical-align: baseline;\n" +
+                "    background-color: bisque;\n" +
+                "    font-family: Arial, Helvetica, sans-serif;\n" +
+                "}\n" +
+                "\n" +
+                "\n" +
+                ".feed-layout {\n" +
+                "    background-color: white;\n" +
+                "    width: 1200px;\n" +
+                "    height: 760px;\n" +
+                "\n" +
+                "    top: 50%;\n" +
+                "    left: 50%;\n" +
+                "    position: absolute;\n" +
+                "    transform: translate(-50%, -50%);\n" +
+                "    border-radius: 20px;\n" +
+                "    border-width: 2px;\n" +
+                "    padding: 30px;\n" +
+                "    justify-content: center;\n" +
+                "    align-items: center;\n" +
+                "\n" +
+                "    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);\n" +
+                "}\n" +
+                "\n" +
+                ".feed-text {\n" +
+                "    text-align: center;\n" +
+                "}\n" +
+                "\n" +
+                ".feed-page {\n" +
+                "    background-color: #ccc;\n" +
+                "    color: #fff;\n" +
+                "    border-radius: 19px;\n" +
+                "    font-size: 50px;\n" +
+                "    padding: 10.5px 15.3px;\n" +
+                "    border-style: solid;\n" +
+                "    border: 0px;\n" +
+                "    text-decoration: none;\n" +
+                "    color: #000;\n" +
+                "    bottom: 220px;\n" +
+                "}\n" +
+                ".feed-pages {\n" +
+                "    display: flex;\n" +
+                "    justify-content: space-between;\n" +
+                "    margin-top: 50px;\n" +
+                "}\n" +
+                "}</style>" +
                 "    <script>var exports = {};</script>\n" +
                 "\n" +
                 "</head>\n" +
