@@ -96,7 +96,7 @@ function sendVoteRequest() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    url = "https://381f-2804-14d-8487-8cb6-2e9-ee2c-2ae8-323e/vote";
+                    url = "https://381f-2804-14d-8487-8cb6-2e9-ee2c-2ae8-323e.ngrok-free.app/vote";
 
                     feedback = {
                         tablegame: tablegameName,
