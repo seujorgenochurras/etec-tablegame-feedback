@@ -1,4 +1,4 @@
-package io.github.seujorgenochurras.etecfeedbackapi.config;
+package io.github.seujorgenochurras.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
