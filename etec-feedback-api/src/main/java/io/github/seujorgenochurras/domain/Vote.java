@@ -1,25 +1,23 @@
 package io.github.seujorgenochurras.domain;
 
+import io.github.seujorgenochurras.domain.board.BoardGame;
 import jakarta.persistence.*;
-
-import java.util.Objects;
 
 @Entity
 public class Vote {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column(name = "feedback")
-    private Double feedback;
+    private String voterName = "Annonymous";
 
-    @Column(name = "tablegame")
-    private String tablegame;
-    @Column(name = "voteClass")
-    private String voteClass;
+    @ManyToOne
+    private BoardGame boardGame;
 
-    public int id() {
+    @Enumerated(EnumType.ORDINAL)
+    private FeedBack feedback;
+
+    public int getId() {
         return id;
     }
 
@@ -28,53 +26,31 @@ public class Vote {
         return this;
     }
 
-    public Double feedback() {
+    public String getVoterName() {
+        return voterName;
+    }
+
+    public Vote setVoterName(String voterName) {
+        this.voterName = voterName;
+        return this;
+    }
+
+    public BoardGame getBoardGame() {
+        return boardGame;
+    }
+
+    public Vote setBoardGame(BoardGame boardGame) {
+        this.boardGame = boardGame;
+        return this;
+    }
+
+    public FeedBack getFeedback() {
         return feedback;
     }
 
-    public Vote setFeedback(double feedback) {
+    public Vote setFeedback(FeedBack feedback) {
         this.feedback = feedback;
         return this;
     }
-
-    public String tablegame() {
-        return tablegame;
-    }
-
-    public Vote setTablegame(String tablegame) {
-        this.tablegame = tablegame;
-        return this;
-    }
-
-    public String voteClass() {
-        return voteClass;
-    }
-
-    public Vote setVoteClass(String voteClass) {
-        this.voteClass = voteClass;
-        return this;
-    }
-
-    @Override
-    public String toString() {
-        return "Vote{" +
-                "id=" + id +
-                ", feedback=" + feedback +
-                ", tablegame='" + tablegame + '\'' +
-                ", voteClass='" + voteClass + '\'' +
-                '}';
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Vote vote = (Vote) o;
-        return id == vote.id && Objects.equals(feedback, vote.feedback) && Objects.equals(tablegame, vote.tablegame) && Objects.equals(voteClass, vote.voteClass);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(id, feedback, tablegame, voteClass);
-    }
 }
+
