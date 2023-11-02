@@ -1,12 +1,11 @@
-package io.github.seujorgenochurras.etecfeedbackapi.service;
+package io.github.seujorgenochurras.service;
 
-import io.github.seujorgenochurras.etecfeedbackapi.domain.Vote;
-import io.github.seujorgenochurras.etecfeedbackapi.repository.VoteRepository;
+import io.github.seujorgenochurras.domain.Vote;
+import io.github.seujorgenochurras.repository.VoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.*;
-import java.util.stream.Collectors;
 
 @Service
 public class VoteService {
@@ -19,21 +18,15 @@ public class VoteService {
     }
 
     public List<Vote> getVotesAverageByClass(String voteClass) {
-        System.out.println(voteClass);
-        var votes = voteRepository.findByVoteClass(voteClass);
-        System.out.println(votes);
+        var votes = voteRepository.findDintinct();
         HashSet<Vote> newVotes = new HashSet<>();
 
-        votes.forEach(vote -> {
-
-            newVotes.add(new Vote()
-                            .setId(0)
-                    .setVoteClass(voteClass)
-                    .setTablegame(vote.tablegame().replace(".png", ""))
-                    .setFeedback(2));
-        });
-
+        votes.forEach(vote -> newVotes.add(new Vote()
+                        .setId(0)
+                        .setVoteClass(voteClass)
+                        .setTablegame(vote.replace(".png", ""))
+                        .setFeedback(voteRepository.findAverageFeedbackByTablegame(vote))));
         System.out.println(newVotes);
-        return newVotes.stream().sorted((vote1, vote2) -> vote1.feedback().compareTo(vote2.feedback())).toList();
+        return newVotes.stream().sorted((vote2, vote1) -> vote1.feedback().compareTo(vote2.feedback())).toList();
     }
 }
