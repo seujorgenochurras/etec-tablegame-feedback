@@ -63,7 +63,8 @@ for (const radio of emojiRadios) {
 }
 
 async function sendVoteRequest() {
-    const url = "https://af29-2804-14d-8487-8cb6-24e8-9aaf-911b-d345.ngrok-free.app/vote"
+
+    const url = "https://381f-2804-14d-8487-8cb6-2e9-ee2c-2ae8-323e.ngrok-free.app/vote"
     const feedback = {
         tablegame: tablegameName,
         feedback: selectedFeedback,
@@ -81,12 +82,10 @@ async function sendVoteRequest() {
         if (!response.ok) { alert("algo deu errado no request!") }
         else {
             alert("Voto enviado com sucesso!")
-            window.location.href = "/"
+            window.location.href = "https://seujorgenochurras.github.io/etec-tablegame-feedback/src/1a/index.html"
         }
     }
     );
-
-
 }
 function startEmojiAnimation(emoji: Element) {
     const currentEmojiSrc = emoji.getAttribute("src")!;
