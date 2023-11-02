@@ -2,29 +2,20 @@
 export { }
 
 type HtmlElementArrowFunction = (a: Element) => void;
-
 const emojis = document.getElementsByClassName("feed")
 
-const tablegame = document.getElementById("tablegame")?.getAttribute("src")?.replace("resources/logo/", "");
+const tablegame = document.getElementById("tablegame")?.getAttribute("src")?.replace("resources/", "");
 function foreachEmoji(fn: HtmlElementArrowFunction) {
     for (const emoji of emojis) {
         fn(emoji)
     }
 }
 
-foreachEmoji((emoji) => {
-    stopEmojiAnimation(emoji)
+foreachEmoji((a) => {
+    stopEmojiAnimation(a)
+
 })
-foreachEmoji((emoji) => {
-    emoji.addEventListener("mouseenter", () => {
-        if (latestSelectedEmoji == emoji) return;
-        startEmojiAnimation(emoji);
-    });
-    emoji.addEventListener("mouseleave", () => {
-        if (latestSelectedEmoji == emoji) return;
-        stopEmojiAnimation(emoji);
-    })
-})
+
 
 const emojiRadios = document.getElementsByClassName("feed-button")
 let selectedFeedback: Number;
@@ -53,7 +44,7 @@ for (const radio of emojiRadios) {
 }
 
 async function sendVoteRequest() {
-    const url = "http://127.0.0.1:8080/vote"
+    const url = "API URL"
     const feedback = {
         tablegame: tablegame,
         feedback: selectedFeedback,
@@ -61,20 +52,14 @@ async function sendVoteRequest() {
     const response = await fetch(url, {
         method: 'POST',
         body: JSON.stringify(feedback),
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': '*/*',
-        }
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
 
-    }).then(response => {
-        if (!response.ok) { alert("algo deu errado no request!") }
-        else {
-            alert("Voto enviado com sucesso!")
-            window.location.href = "/"
-        }
+    });
+    if (!response.ok) { alert("algo deu errado no request!") }
+    else {
+        alert("Voto enviado com sucesso!")
+        window.location.href = "/"
     }
-    );
-
 
 }
 function startEmojiAnimation(emoji: Element) {

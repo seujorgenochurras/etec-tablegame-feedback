@@ -38,27 +38,15 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _a, _b;
 Object.defineProperty(exports, "__esModule", { value: true });
 var emojis = document.getElementsByClassName("feed");
-var tablegame = (_b = (_a = document.getElementById("tablegame")) === null || _a === void 0 ? void 0 : _a.getAttribute("src")) === null || _b === void 0 ? void 0 : _b.replace("resources/logo/", "");
+var tablegame = (_b = (_a = document.getElementById("tablegame")) === null || _a === void 0 ? void 0 : _a.getAttribute("src")) === null || _b === void 0 ? void 0 : _b.replace("resources/", "");
 function foreachEmoji(fn) {
     for (var _i = 0, emojis_1 = emojis; _i < emojis_1.length; _i++) {
         var emoji = emojis_1[_i];
         fn(emoji);
     }
 }
-foreachEmoji(function (emoji) {
-    stopEmojiAnimation(emoji);
-});
-foreachEmoji(function (emoji) {
-    emoji.addEventListener("mouseenter", function () {
-        if (latestSelectedEmoji == emoji)
-            return;
-        startEmojiAnimation(emoji);
-    });
-    emoji.addEventListener("mouseleave", function () {
-        if (latestSelectedEmoji == emoji)
-            return;
-        stopEmojiAnimation(emoji);
-    });
+foreachEmoji(function (a) {
+    stopEmojiAnimation(a);
 });
 var emojiRadios = document.getElementsByClassName("feed-button");
 var selectedFeedback;
@@ -94,7 +82,7 @@ function sendVoteRequest() {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0:
-                    url = "http://127.0.0.1:8080/vote";
+                    url = "API URL";
                     feedback = {
                         tablegame: tablegame,
                         feedback: selectedFeedback,
@@ -102,21 +90,17 @@ function sendVoteRequest() {
                     return [4 /*yield*/, fetch(url, {
                             method: 'POST',
                             body: JSON.stringify(feedback),
-                            headers: {
-                                'Content-Type': 'application/json',
-                                'Accept': '*/*',
-                            }
-                        }).then(function (response) {
-                            if (!response.ok) {
-                                alert("algo deu errado no request!");
-                            }
-                            else {
-                                alert("Voto enviado com sucesso!");
-                                window.location.href = "/";
-                            }
+                            headers: { 'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8' }
                         })];
                 case 1:
                     response = _a.sent();
+                    if (!response.ok) {
+                        alert("algo deu errado no request!");
+                    }
+                    else {
+                        alert("Voto enviado com sucesso!");
+                        window.location.href = "/";
+                    }
                     return [2 /*return*/];
             }
         });
