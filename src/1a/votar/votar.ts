@@ -64,7 +64,7 @@ for (const radio of emojiRadios) {
 
 async function sendVoteRequest() {
 
-    const url = "https://381f-2804-14d-8487-8cb6-2e9-ee2c-2ae8-323e.ngrok-free.app/vote"
+    const url = "https://e2f0-2804-14d-8487-8cb6-65f0-117f-e771-9aba.ngrok-free.app/vote"
     const feedback = {
         tablegame: tablegameName,
         feedback: selectedFeedback,
